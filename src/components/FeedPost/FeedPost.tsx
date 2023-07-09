@@ -12,12 +12,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import {Ipost} from '../../types/models';
 import DoublePressable from '../DoublePressable';
+import Carousel from '../Carousel';
+import VideoPlayer from '../VideoPlayer';
 
 interface IFeedPost {
   post: Ipost;
+  isVisible: boolean;
 }
 
-const FeedPost = ({post}: IFeedPost) => {
+const FeedPost = ({post, isVisible}: IFeedPost) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -27,6 +30,15 @@ const FeedPost = ({post}: IFeedPost) => {
   const toggleLiked = () => {
     setIsLiked(v => !v);
   };
+
+  let content = null;
+  if (post.image) {
+    content = <Image source={{uri: post.image}} style={styles.image} />;
+  } else if (post.images) {
+    content = <Carousel images={post.images} />;
+  } else if (post.video) {
+    content = <VideoPlayer uri={post.video} paused={!isVisible} />;
+  }
 
   return (
     <View style={styles.post}>
@@ -42,9 +54,7 @@ const FeedPost = ({post}: IFeedPost) => {
       </View>
 
       {/* Content */}
-      <DoublePressable onDoublePress={toggleLiked}>
-        <Image source={{uri: post.image}} style={styles.image} />
-      </DoublePressable>
+      <DoublePressable onDoublePress={toggleLiked}>{content}</DoublePressable>
 
       {/* Footer */}
       <View style={styles.footer}>

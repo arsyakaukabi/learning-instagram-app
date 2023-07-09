@@ -2,7 +2,7 @@
     {
       "id": "1",
       "createdAt": "19 December 2023",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+      "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
       "user": {
         "id": "u1",
@@ -33,8 +33,12 @@
     {
       "id": "2",
       "createdAt": "19 December 2021",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
+      "images": [
+        "https://picsum.photos/id/109/500",
+        "https://picsum.photos/id/110/500",
+        "https://picsum.photos/id/111/500",
+        "https://picsum.photos/id/112/500"
+      ],      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
       "user": {
         "id": "u1",
         "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg",
@@ -64,7 +68,7 @@
     {
       "id": "3",
       "createdAt": "19 December 2021",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg",
+      "image": "https://picsum.photos/id/109/500",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
       "user": {
         "id": "u1",
@@ -95,7 +99,7 @@
     {
       "id": "4",
       "createdAt": "19 December 2021",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg",
+      "image": "https://picsum.photos/id/104/500",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellendus unde blanditiis. Eos fugiat dolorem ea fugit aut sapiente corrupti autem dolores deleniti architecto, omnis, amet unde dignissimos quam minima?",
       "user": {
         "id": "u1",
