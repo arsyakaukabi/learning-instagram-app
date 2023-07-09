@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-devtools": "^4.27.8",
+    "react-hook-form": "^7.45.1",
     "react-native": "0.72.1",
     "react-native-vector-icons": "^9.2.0",
     "react-native-video": "^6.0.0-alpha.6"
