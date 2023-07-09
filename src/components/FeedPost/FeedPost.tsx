@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {Text, View, Image, Pressable} from 'react-native';
 import React from 'react';
 import colors from '../../theme/colors';
-import fonts from '../../theme/fonts';
 import Comment from '../Comment';
+import {useState} from 'react';
 
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -11,12 +11,23 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
 import {Ipost} from '../../types/models';
+import DoublePressable from '../DoublePressable';
 
 interface IFeedPost {
   post: Ipost;
 }
 
 const FeedPost = ({post}: IFeedPost) => {
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const toggleDescriptionExpanded = () => {
+    setIsDescriptionExpanded(v => !v);
+  };
+  const toggleLiked = () => {
+    setIsLiked(v => !v);
+  };
+
   return (
     <View style={styles.post}>
       {/* Header */}
@@ -31,17 +42,21 @@ const FeedPost = ({post}: IFeedPost) => {
       </View>
 
       {/* Content */}
-      <Image source={{uri: post.image}} style={styles.image} />
+      <DoublePressable onDoublePress={toggleLiked}>
+        <Image source={{uri: post.image}} style={styles.image} />
+      </DoublePressable>
 
       {/* Footer */}
       <View style={styles.footer}>
         <View style={styles.iconContainer}>
-          <AntDesign
-            name={'heart'}
-            size={24}
-            style={styles.icon}
-            color={colors.black}
-          />
+          <Pressable onPress={toggleLiked}>
+            <AntDesign
+              name={isLiked ? 'heart' : 'hearto'}
+              size={24}
+              style={styles.icon}
+              color={!isLiked ? colors.black : colors.accent}
+            />
+          </Pressable>
           <Ionicons
             name="chatbubble-outline"
             size={24}
@@ -67,11 +82,13 @@ const FeedPost = ({post}: IFeedPost) => {
           <Text style={styles.bold}>{post.nofLikes} others</Text>
         </Text>
         {/* Post Descriptions */}
-        <Text style={styles.text}>
+        <Text style={styles.text} numberOfLines={isDescriptionExpanded ? 0 : 2}>
           <Text style={styles.bold}>{post.user.username}</Text>{' '}
-          {post.description}
+          <Text onPress={toggleDescriptionExpanded}>{post.description}</Text>
         </Text>
-
+        <Text onPress={toggleDescriptionExpanded}>
+          {isDescriptionExpanded ? 'less' : 'more'}
+        </Text>
         {/* Comments */}
         <Text>View all {post.nofComments} comments</Text>
         {post.comments.map(comment => (
