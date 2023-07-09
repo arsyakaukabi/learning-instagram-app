@@ -5,8 +5,8 @@ import CommentsScreen from './src/screens/CommentsScreen/CommentsScreen';
 const App = () => {
   return (
     <View style={styles.app}>
-      <HomeScreen />
-      {/* <CommentsScreen /> */}
+      {/* <HomeScreen /> */}
+      <CommentsScreen />
     </View>
   );
 };
