@@ -3,6 +3,7 @@ import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import CommentsScreen from './src/screens/CommentsScreen/CommentsScreen';
 import ProfileScreen from './src/screens/ProfileScreen/ProfileScreen';
 import EditProfileScreen from './src/screens/EditProfileScreen';
+import PostUploadScreen from './src/screens/PostUploadScreen';
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
       {/* <HomeScreen /> */}
       {/* <CommentsScreen /> */}
       {/* <ProfileScreen /> */}
-      <EditProfileScreen />
+      {/* <EditProfileScreen /> */}
+      <PostUploadScreen />
     </View>
   );
 };
