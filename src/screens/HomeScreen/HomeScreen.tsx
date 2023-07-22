@@ -3,7 +3,7 @@ import FeedPost from '../../components/FeedPost';
 import posts from '../../assets/Data/posts.json';
 import {useRef, useState} from 'react';
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   const [activeId, setActiveId] = useState<string | null>(null);
   const viewabilityConfig: ViewabilityConfig = {
     itemVisiblePercentThreshold: 51,
@@ -16,7 +16,6 @@ const HomeScreen = () => {
       }
     },
   );
-
   return (
     <FlatList
       data={posts}

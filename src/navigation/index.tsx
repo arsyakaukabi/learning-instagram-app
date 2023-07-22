@@ -18,7 +18,6 @@ const Navigation = () => {
         <Stack.Screen
           name="UserProfile"
           component={ProfileScreen}
-          options={{headerTitle: 'Profile',headerTitleAlign:'center'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
