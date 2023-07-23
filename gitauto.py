@@ -1,9 +1,9 @@
 import subprocess
 
-opsi = input("1: Masukkan ke Repo\n2: Ambil dari Repo\n ")
+opsi = input("1: Upload to Repo\n2: Download from Repo\nChoose option: ")
 
 if opsi == "1":
-    commit_message = input('Masukkan Pesan Commit : ')
+    commit_message = input('Enter commit message : ')
     try:
         subprocess.run(
             ["git", "add", "."], check=True
