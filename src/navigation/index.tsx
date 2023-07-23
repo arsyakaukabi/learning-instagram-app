@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import BottomTabNavigator from './BottomTabNavigator';
+import CommentsScreen from '../screens/CommentsScreen/CommentsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,14 +14,16 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Feed"
+        initialRouteName="Home"
         screenOptions={{headerShown: true}}>
-        <Stack.Screen name='Home' component={BottomTabNavigator}/>
-        <Stack.Screen name="Feed" component={HomeScreen} options={{headerTitleAlign:'center'}}/>
+
+        <Stack.Screen 
+          name="Home" 
+          component={BottomTabNavigator} 
+          options={{headerShown:false}}/>
         <Stack.Screen
-          name="UserProfile"
-          component={ProfileScreen}
-        />
+          name='Comments'
+          component={CommentsScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

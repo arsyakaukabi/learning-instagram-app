@@ -16,7 +16,6 @@ import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
 
 import {useNavigation} from '@react-navigation/native';
-import Navigation from '../../navigation';
 
 interface IFeedPost {
   post: Ipost;
@@ -38,6 +37,9 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
   const navigateToUser = () => {
     navigation.navigate('UserProfile', {userId :post.user.id});
   };
+  const navigateToComments = ()=>{
+    navigation.navigate('Comments', {postId: post.id})
+  }
 
   let content = null;
   if (post.image) {
@@ -110,7 +112,7 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
           {isDescriptionExpanded ? 'less' : 'more'}
         </Text>
         {/* Comments */}
-        <Text>View all {post.nofComments} comments</Text>
+        <Text onPress={navigateToComments}>View all {post.nofComments} comments</Text>
         {post.comments.map(comment => (
           <Comment key={comment.id} comment={comment} />
         ))}

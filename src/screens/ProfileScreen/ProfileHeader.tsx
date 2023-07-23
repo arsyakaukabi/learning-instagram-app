@@ -3,8 +3,11 @@ import React from 'react';
 import styles from './styles';
 import user from '../../assets/Data/user.json';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
+import Navigation from '../../navigation';
 
 const ProfileHeader = () => {
+  const navigation = useNavigation()
   return (
     <View style={styles.root}>
       {/* Header */}
@@ -30,10 +33,7 @@ const ProfileHeader = () => {
       </View>
       {/* Button */}
       <View style={{flexDirection: 'row'}}>
-        <Button
-          text="Edit Profile"
-          onPress={() => console.warn('loading...')}
-        />
+        <Button text="Edit Profile" onPress={()=> navigation.navigate('Edit Profile')} />
         <Button text="Another" onPress={() => console.warn('loading...')} />
       </View>
     </View>
