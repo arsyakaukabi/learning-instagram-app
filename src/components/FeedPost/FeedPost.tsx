@@ -36,7 +36,7 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
   const navigation = useNavigation();
 
   const navigateToUser = () => {
-    navigation.navigate('UserProfile', {user:post.user});
+    navigation.navigate('UserProfile', {userId :post.user.id});
   };
 
   let content = null;

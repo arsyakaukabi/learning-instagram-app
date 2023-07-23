@@ -7,8 +7,7 @@ import { useRoute,useNavigation} from '@react-navigation/native';
 const ProfileScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
-  const {user}=route.params
-  navigation.setOptions({title : user.username})
+  const {userId}=route.params
   return <FeedGridView data={user.posts} ListHeaderComponent={ProfileHeader} />;
 };
 
