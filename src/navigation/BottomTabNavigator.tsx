@@ -7,9 +7,10 @@ import colors from '../theme/colors';
 import PostUploadScreen from '../screens/PostUploadScreen/PostUploadScreen';
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator';
+import { BottomTabNavigatorParamList } from './types';
 
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();
 
 const BottomTabNavigator=()=>{
     return(
@@ -26,7 +27,7 @@ const BottomTabNavigator=()=>{
             <Tab.Screen name='Notifications' component={HomeScreen} options={{tabBarIcon:({color,size})=> (
                 <MaterialIcons name="notifications" size={size} color={color}/>
             )}}/>
-            <Tab.Screen name='My Profile' component={ProfileStackNavigator} options={{headerShown:false,tabBarIcon:({color,size})=> (
+            <Tab.Screen name='MyProfile' component={ProfileStackNavigator} options={{headerShown:false,tabBarIcon:({color,size})=> (
                 <FontAwesome name="user-circle-o" size={size} color={color}/>
             )}}/>
         </Tab.Navigator>

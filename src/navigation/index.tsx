@@ -1,14 +1,12 @@
-import {StyleSheet, Text, View,Image} from 'react-native';
+import {StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import CommentsScreen from '../screens/CommentsScreen/CommentsScreen';
+import { RootNavigatorParamList } from './types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootNavigatorParamList>();
 
 const Navigation = () => {
   return (
@@ -36,6 +34,7 @@ const header = () => {
       <Image source={require('../assets/image/logo-fix1.png')} style={styles.feedHeader}/>
   );
 };
+
 const styles = StyleSheet.create({
   feedHeader:{
     width:150,

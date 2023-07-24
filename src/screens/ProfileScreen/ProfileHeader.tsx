@@ -4,10 +4,9 @@ import styles from './styles';
 import user from '../../assets/Data/user.json';
 import Button from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
-import Navigation from '../../navigation';
-
+import {ProfileNavigationProp} from '../../navigation/types'
 const ProfileHeader = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<ProfileNavigationProp>()
   return (
     <View style={styles.root}>
       {/* Header */}
